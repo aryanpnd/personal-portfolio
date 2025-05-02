@@ -36,11 +36,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api', apiRoutes);
 
 // Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, '../portfolio-frontend-v1/dist')));
+app.use(express.static(path.join(__dirname, './portfolio-frontend-v1/dist')));
 
 // Handle any requests that don't match the above
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../portfolio-frontend-v1/dist/index.html'));
+    res.sendFile(path.join(__dirname, './portfolio-frontend-v1/dist/index.html'));
 });
 
 app.get('/health', (req, res) => {
