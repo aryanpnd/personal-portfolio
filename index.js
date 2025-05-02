@@ -50,6 +50,11 @@ app.get('/api/health', (req, res) => {
     res.status(200).json({ status: 'ok' });
 });
 
+
+app.use((req, res) => {
+    res.sendFile(path.join(__dirname, './portfolio-frontend-v1/dist/index.html'));
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
